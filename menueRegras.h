@@ -1,6 +1,6 @@
-#include <stdio.h>
 
-int main()
+
+void menu()
 {
   int option;
   int player1;
@@ -15,7 +15,7 @@ int main()
     printf("[Select 2 - for Two Players Mode]\n");
     printf("[Select 3 - to See the Rules]\n");
     printf("[Select 4 - to EXIT]\n");
-    // como colocar para ele não entender letras?
+
     printf("\nEnter the desired option: ");
     scanf("%d", &option);
 

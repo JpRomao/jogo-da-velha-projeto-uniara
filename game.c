@@ -1,8 +1,9 @@
 #include <stdio.h>
+#include "menueRegras.h"
 
 int main()
 {
-  printf("Hello, World!");
+  menu();
 
   return 0;
 }
