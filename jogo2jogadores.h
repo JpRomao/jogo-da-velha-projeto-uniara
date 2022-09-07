@@ -1,4 +1,0 @@
-
-void jogo2jogadores()
-{
-}

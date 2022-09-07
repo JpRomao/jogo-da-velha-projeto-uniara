@@ -1,4 +1,3 @@
-
 void menu()
 {
   char option;
@@ -14,18 +13,19 @@ void menu()
   printf("\nEnter the desired option: ");
   scanf("%c", &option);
   getchar();
-  int number = option - '0';
 
-  switch (number)
+  int selectedOption = option - '0';
+
+  switch (selectedOption)
   {
   case 1:
     printf("You chose the mode One Player. \n");
-    jogo1jogador();
+
     break;
 
   case 2:
     printf("You chose the mode Two Players. \n");
-    jogo2jogadores();
+
     break;
 
   case 3:
@@ -39,7 +39,7 @@ void menu()
     break;
 
   case 4:
-    printf("You chose to EXIT. \n");
+    printf("Goodbye!!! Until the next! \n");
     scanf("%i", &exit);
 
   default:
