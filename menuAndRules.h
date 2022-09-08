@@ -1,3 +1,6 @@
+#include "gameOnePlayer.h"
+#include "gameTwoPlayers.h"
+
 void menu()
 {
   char option;
@@ -19,12 +22,11 @@ void menu()
   switch (selectedOption)
   {
   case 1:
-    printf("You chose the mode One Player. \n");
-
+    gameOnePlayer();
     break;
 
   case 2:
-    printf("You chose the mode Two Players. \n");
+    gameTwoPlayers();
 
     break;
 
