@@ -1,13 +1,14 @@
-#include <stdio.h>
-
+#include "tabuleiro.h"
 void gameOnePlayer()
 
 {
 
-  char nameplayer[15];
+  char playername[15];
 
   printf("Player - Type here as would like to be identified: ");
-  fgets(nameplayer, 15, stdin);
-  printf("Hello %s", nameplayer);
-  printf("Let's go to the game!!!");
+  fgets(playername, 15, stdin);
+  playername[strcspn(playername, "\r\n")] = 0;
+  printf("Hello %s", playername);
+  printf("Let's go to the game!!!\n");
+  tabuleiro();
 }

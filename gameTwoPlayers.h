@@ -1,17 +1,20 @@
-#include <stdio.h>
+
 
 void gameTwoPlayers()
 
 {
-  char name1player[15];
-  char name2player[15];
+  char player1name[15];
+  char player2name[15];
 
   printf("Player One - Type here as would like to be identified: ");
-  fgets(name1player, 15, stdin);
+  fgets(player1name, 15, stdin);
+  player1name[strcspn(player1name, "\r\n")] = 0;
   printf("Player Two - Type here as would like to be identified: ");
-  fgets(name2player, 15, stdin);
+  fgets(player2name, 15, stdin);
+  player2name[strcspn(player2name, "\r\n")] = 0;
 
-  printf("Hello %s", name1player);
-  printf("Hello %s", name2player);
-  printf("Let's go to the game!!!");
+  printf("Hello %s\n", player1name);
+  printf("Hello %s\n", player2name);
+  printf("Let's go to the game!!!\n");
+  tabuleiro();
 }

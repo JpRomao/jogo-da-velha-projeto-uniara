@@ -1,6 +1,6 @@
-#include <stdio.h>
+
 void tabuleiro()
-// int main()
+
 {
 
   int board[3][3];
@@ -10,9 +10,10 @@ void tabuleiro()
   {
     for (j = 0; j < 3; j++)
     {
-      board[i][j] = 3;
+      board[i][j] = ' ';
     }
   }
+
   for (i = 0; i < 3; i++)
   {
     for (j = 0; j < 3; j++)
@@ -28,6 +29,4 @@ void tabuleiro()
     }
     printf("\n \n");
   }
-
-  // return 0;
 }
