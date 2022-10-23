@@ -1,18 +1,7 @@
-
-void tabuleiro()
+void viewBoard(char board[3][3])
 
 {
-
-  int board[3][3];
   int i, j;
-
-  for (i = 0; i < 3; i++)
-  {
-    for (j = 0; j < 3; j++)
-    {
-      board[i][j] = ' ';
-    }
-  }
 
   for (i = 0; i < 3; i++)
   {
@@ -28,5 +17,18 @@ void tabuleiro()
       }
     }
     printf("\n \n");
+  }
+}
+
+void fillsBoard(char board[3][3])
+{
+  int i, j;
+
+  for (i = 0; i < 3; i++)
+  {
+    for (j = 0; j < 3; j++)
+    {
+      board[i][j] = ' ';
+    }
   }
 }

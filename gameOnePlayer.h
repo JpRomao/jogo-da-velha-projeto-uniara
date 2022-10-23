@@ -1,4 +1,4 @@
-#include "tabuleiro.h"
+#include "board.h"
 void gameOnePlayer()
 
 {
@@ -10,5 +10,5 @@ void gameOnePlayer()
   playername[strcspn(playername, "\r\n")] = 0;
   printf("Hello %s", playername);
   printf("Let's go to the game!!!\n");
-  tabuleiro();
+  board();
 }

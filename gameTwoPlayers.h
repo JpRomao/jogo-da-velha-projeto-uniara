@@ -1,5 +1,5 @@
-
-
+#include <stdio.h>
+#include "board.h"
 void gameTwoPlayers()
 
 {
@@ -15,6 +15,6 @@ void gameTwoPlayers()
 
   printf("Hello %s\n", player1name);
   printf("Hello %s\n", player2name);
-  printf("Let's go to the game!!!\n");
-  tabuleiro();
+  printf("\nLet's go to the game!!!\n");
+  board();
 }
