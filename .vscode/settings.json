@@ -1,0 +1,12 @@
+{
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json",
+    "board.h": "c",
+    "menuandrules.h": "c",
+    "winlosedraw.h": "c",
+    "gametwoplayers.h": "c",
+    "gameoneplayer.h": "c"
+  }
+}

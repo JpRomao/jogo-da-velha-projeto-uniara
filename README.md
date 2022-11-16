@@ -1,4 +1,4 @@
-<h1>jogo-da-velha-projeto-uniara</h1>
+<h1>Projeto jogo da velha - Uniara - Aula algoritmos</h1>
 
 <h3>Participantes:</h3>
   <p>João Pedro Romão - 04722-037</p>

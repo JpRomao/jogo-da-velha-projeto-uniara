@@ -3,26 +3,29 @@
 
 int main()
 {
-
   int row, column, end = 0;
   char board[3][3];
   char player1 = 'X';
   char player2 = 'O';
   int gamePlay = player1;
 
-  fillsBoard(board);
+  initBoard(board);
 
   printf("Player 1 - start your move:\n");
 
   do
   {
     viewBoard(board);
+
     printf("Enter the row: ");
     fflush(stdin);
     scanf("%d", &row);
+    getchar();
+
     printf("Enter the column: ");
     fflush(stdin);
     scanf("%d", &column);
+    getchar();
 
     if (board[row][column] == ' ')
     {
@@ -31,11 +34,13 @@ int main()
       if (gamePlay == player1)
       {
         printf("Player 2 - enter your move:\n\n");
+
         gamePlay = player2;
       }
       else
       {
         printf("Player 1 - enter your move:\n\n");
+
         gamePlay = player1;
       }
     }

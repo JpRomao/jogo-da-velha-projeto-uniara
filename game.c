@@ -9,11 +9,14 @@
 */
 
 #include <stdio.h>
+#include <string.h>
 
 #include "menuAndRules.h"
 
 int main()
 {
+  printf("========== Welcome to Tic Tac Toe! ==========\n");
+
   menu();
 
   return 0;
