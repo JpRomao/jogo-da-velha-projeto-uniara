@@ -3,11 +3,11 @@
 #include "winLoseDraw.h"
 #include "gameOnePlayer.h"
 #include "gameTwoPlayers.h"
+#include "ai.h"
 
 void menu()
 {
   char option;
-  int exit;
 
   printf("\n");
 

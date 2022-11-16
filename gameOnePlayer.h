@@ -5,20 +5,20 @@ void gameOnePlayer()
   int endgame = 0;
   int position[2];
   int playerTurn = 1;
+  int aiLevel = 2;
+  int winner = 0;
 
   initBoard(board);
 
-  viewBoard(board);
-
   printf("Type here as would you like to be identified: ");
-
   fgets(playername, 15, stdin);
-
   playername[strcspn(playername, "\r\n")] = 0;
 
   printf("Hello %s!\n", playername);
 
   printf("Let's go to the game!!!\n");
+
+  viewBoard(board);
 
   while (!endgame)
   {
@@ -29,6 +29,23 @@ void gameOnePlayer()
 
     if (play(board, position, 1))
     {
+
+      winner = checkWinner(board, playerTurn);
+
+      if (!winner)
+      {
+        playerTurn = 2;
+
+        getAiMove(aiLevel, board);
+
+        winner = checkWinner(board, playerTurn);
+
+        if (!winner)
+        {
+          playerTurn = 1;
+        }
+      }
+
       viewBoard(board);
     }
 

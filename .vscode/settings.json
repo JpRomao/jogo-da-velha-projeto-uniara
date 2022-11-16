@@ -7,6 +7,8 @@
     "menuandrules.h": "c",
     "winlosedraw.h": "c",
     "gametwoplayers.h": "c",
-    "gameoneplayer.h": "c"
+    "gameoneplayer.h": "c",
+    "ai.h": "c"
   }
 }
+

@@ -10,11 +10,15 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
+#include <stdlib.h>
 
 #include "menuAndRules.h"
 
 int main()
 {
+  srand(time(NULL));
+
   printf("========== Welcome to Tic Tac Toe! ==========\n");
 
   menu();
