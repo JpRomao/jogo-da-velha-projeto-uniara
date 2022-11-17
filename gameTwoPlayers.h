@@ -1,4 +1,4 @@
-void gameTwoPlayers()
+void gameTwoPlayers(int score[2])
 {
   char player1name[15];
   char player2name[15];

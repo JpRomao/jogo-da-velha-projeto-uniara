@@ -4,6 +4,7 @@
 #include "gameOnePlayer.h"
 #include "gameTwoPlayers.h"
 #include "ai.h"
+#include "scoreboard.h"
 
 void menu()
 {
@@ -23,13 +24,15 @@ void menu()
 
   int selectedOption = option - '0';
 
+  int score[2] = {0, 0};
+
   switch (selectedOption)
   {
   case 1:
-    gameOnePlayer();
+    gameOnePlayer(score);
     break;
   case 2:
-    gameTwoPlayers();
+    gameTwoPlayers(score);
     break;
   case 3:
     printf("======Let's go the rules======:\n\n");

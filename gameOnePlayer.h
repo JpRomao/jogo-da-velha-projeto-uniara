@@ -1,4 +1,4 @@
-void gameOnePlayer()
+void gameOnePlayer(int score[2])
 {
   char playername[15];
   char board[3][3];
@@ -53,11 +53,19 @@ void gameOnePlayer()
     {
       printf("Congratulations %s, you won!\n", playername);
 
+      score[0]++;
+
+      showScoreboard(score);
+
       endgame = 1;
     }
     else if (checkWinner(board, 2))
     {
       printf("You lose!\n");
+
+      score[1]++;
+
+      showScoreboard(score);
 
       endgame = 1;
     }
@@ -76,7 +84,7 @@ void gameOnePlayer()
 
   if (option == 'Y' || option == 'y')
   {
-    gameOnePlayer();
+    gameOnePlayer(score);
   }
   else
   {
