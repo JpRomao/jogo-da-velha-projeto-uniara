@@ -29,10 +29,10 @@ void menu()
   switch (selectedOption)
   {
   case 1:
-    gameOnePlayer(score);
+    gameOnePlayer(score, "");
     break;
   case 2:
-    gameTwoPlayers(score);
+    gameTwoPlayers(score, "", "");
     break;
   case 3:
     printf("======Let's go the rules======:\n\n");

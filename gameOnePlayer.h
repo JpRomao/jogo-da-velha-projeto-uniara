@@ -1,6 +1,6 @@
-void gameOnePlayer(int score[2])
+void gameOnePlayer(int score[2], char previousPlayerName[15])
 {
-  char playername[15];
+  char playername[15] = previousPlayerName;
   char board[3][3];
   int endgame = 0;
   int position[2];
@@ -10,9 +10,12 @@ void gameOnePlayer(int score[2])
 
   initBoard(board);
 
-  printf("Type here as would you like to be identified: ");
-  fgets(playername, 15, stdin);
-  playername[strcspn(playername, "\r\n")] = 0;
+  if (strcmp(playername, "") == 0)
+  {
+    printf("Type here as would you like to be identified: ");
+    fgets(playername, 15, stdin);
+    playername[strcspn(playername, "\r\n")] = 0;
+  }
 
   printf("Hello %s!\n", playername);
 
@@ -75,16 +78,14 @@ void gameOnePlayer(int score[2])
     }
   }
 
-  char option = "";
-
   printf("Do you want to play again? (Y/N): ");
   fflush(stdin);
-  scanf("%c", &option);
+  char option = getchar();
   getchar();
 
   if (option == 'Y' || option == 'y')
   {
-    gameOnePlayer(score);
+    gameOnePlayer(score, playername);
   }
   else
   {
