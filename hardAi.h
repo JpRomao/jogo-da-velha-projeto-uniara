@@ -1,4 +1,4 @@
-int bestMove(char board[3][3])
+int bestMove(char board[3][3], char playerName[15])
 {
   int bestMove = -1;
   int bestScore = -1000;
@@ -9,7 +9,7 @@ int bestMove(char board[3][3])
     {
       board[i / 3][i % 3] = 'O';
 
-      int score = minimax(board, 0, 0);
+      int score = minimax(board, 0, 0, playerName);
 
       board[i / 3][i % 3] = ' ';
 
@@ -25,9 +25,9 @@ int bestMove(char board[3][3])
   return bestMove;
 }
 
-int minimax(char board[3][3], int depth, int isMaximizing)
+int minimax(char board[3][3], int depth, int isMaximizing, char playerName[15])
 {
-  int result = checkWinner(board, depth);
+  int result = checkWinner(board, depth, playerName, "Computer");
 
   if (result != 0)
   {
@@ -44,7 +44,7 @@ int minimax(char board[3][3], int depth, int isMaximizing)
       {
         board[i / 3][i % 3] = 'O';
 
-        int score = minimax(board, depth + 1, 0);
+        int score = minimax(board, depth + 1, 0, playerName);
 
         board[i / 3][i % 3] = ' ';
 
@@ -67,7 +67,7 @@ int minimax(char board[3][3], int depth, int isMaximizing)
       {
         board[i / 3][i % 3] = 'X';
 
-        int score = minimax(board, depth + 1, 1);
+        int score = minimax(board, depth + 1, 1, playerName);
 
         board[i / 3][i % 3] = ' ';
 

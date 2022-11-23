@@ -69,15 +69,11 @@ int isPositionValid(char board[3][3], int position[2])
     }
     else
     {
-      printf("Position already filled. Try again.\n\n");
-
       return 0;
     }
   }
   else
   {
-    printf("Position is invalid. Try again.\n\n");
-
     return 0;
   }
 }

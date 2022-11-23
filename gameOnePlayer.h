@@ -1,6 +1,6 @@
 void gameOnePlayer(int score[2], char previousPlayerName[15])
 {
-  char playername[15];
+  char playerName[15];
   char board[3][3];
   int endgame = 0;
   int position[2];
@@ -8,18 +8,18 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
   int aiLevel = 2;
   int winner = 0;
 
-  strcpy(playername, previousPlayerName);
+  strcpy(playerName, previousPlayerName);
 
   initBoard(board);
 
-  if (strcmp(playername, "") == 0)
+  if (strcmp(playerName, "") == 0)
   {
     printf("Type here as would you like to be identified: ");
-    fgets(playername, 15, stdin);
-    playername[strcspn(playername, "\r\n")] = 0;
+    fgets(playerName, 15, stdin);
+    playerName[strcspn(playerName, "\r\n")] = 0;
   }
 
-  printf("Hello %s!\n", playername);
+  printf("Hello %s!\n", playerName);
 
   printf("Let's go to the game!!!\n");
 
@@ -31,6 +31,7 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
     fflush(stdin);
     scanf("%d", &position[0]);
     getchar();
+
     printf("Type the chosen column: ");
     fflush(stdin);
     scanf("%d", &position[1]);
@@ -38,16 +39,15 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
 
     if (play(board, position, 1))
     {
-
-      winner = checkWinner(board, playerTurn);
+      winner = checkWinner(board, playerTurn, playerName, "Computer");
 
       if (!winner)
       {
         playerTurn = 2;
 
-        getAiMove(aiLevel, board);
+        getAiMove(aiLevel, board, playerName);
 
-        winner = checkWinner(board, playerTurn);
+        winner = checkWinner(board, playerTurn, playerName, "Computer");
 
         if (!winner)
         {
@@ -57,29 +57,37 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
 
       viewBoard(board);
     }
-
-    if (checkWinner(board, 1))
+    else
     {
-      printf("Congratulations %s, you won!\n", playername);
+      printf("Invalid position! Try again.\n\n");
+
+      continue;
+    }
+
+    if (checkWinner(board, 1, playerName, "Computer"))
+    {
+      printf("Congratulations %s, you won!\n", playerName);
 
       score[0]++;
 
-      showScoreboard(score);
+      showScoreboard(score, playerName, "Computer");
 
       endgame = 1;
     }
-    else if (checkWinner(board, 2))
+    else if (checkWinner(board, 2, playerName, "Computer"))
     {
       printf("You lose!\n");
 
       score[1]++;
 
-      showScoreboard(score);
+      showScoreboard(score, playerName, "Computer");
 
       endgame = 1;
     }
     else if (isTie(board))
     {
+      printf("\nIt's a draw!\n");
+
       endgame = 1;
     }
   }
@@ -91,7 +99,7 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
 
   if (option == 'Y' || option == 'y')
   {
-    gameOnePlayer(score, playername);
+    gameOnePlayer(score, playerName);
   }
   else
   {
