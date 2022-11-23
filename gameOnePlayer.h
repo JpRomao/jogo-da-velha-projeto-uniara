@@ -27,9 +27,13 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
 
   while (!endgame)
   {
-    printf("Type the position you want to play: ");
+    printf("Player %d type the chosen row: ", playerTurn);
     fflush(stdin);
-    scanf("%d %d", &position[0], &position[1]);
+    scanf("%d", &position[0]);
+    getchar();
+    printf("Type the chosen column: ");
+    fflush(stdin);
+    scanf("%d", &position[1]);
     getchar();
 
     if (play(board, position, 1))

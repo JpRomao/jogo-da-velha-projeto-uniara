@@ -15,7 +15,7 @@ void gameTwoPlayers(int score[2], char previousPlayer1Name[15], char previousPla
 
   if (strcmp(player1name, "") == 0)
   {
-    printf("Player One - Type here as would you like to be identified: ");
+    printf("Player 1 - Type here as would you like to be identified: ");
     fgets(player1name, 15, stdin);
     player1name[strcspn(player1name, "\r\n")] = 0;
   }
@@ -24,7 +24,7 @@ void gameTwoPlayers(int score[2], char previousPlayer1Name[15], char previousPla
 
   if (strcmp(player2name, "") == 0)
   {
-    printf("Player Two - Type here as would you like to be identified: ");
+    printf("Player 2 - Type here as would you like to be identified: ");
     fgets(player2name, 15, stdin);
     player2name[strcspn(player2name, "\r\n")] = 0;
   }
@@ -37,9 +37,13 @@ void gameTwoPlayers(int score[2], char previousPlayer1Name[15], char previousPla
 
   while (!endgame)
   {
-    printf("Player %d type the position you want to play: ", playerTurn);
+    printf("Player %d type the chosen row: ", playerTurn);
     fflush(stdin);
-    scanf("%d %d", &position[0], &position[1]);
+    scanf("%d", &position[0]);
+    getchar();
+    printf("Type the chosen column: ");
+    fflush(stdin);
+    scanf("%d", &position[1]);
     getchar();
 
     if (play(board, position, playerTurn))
@@ -74,6 +78,7 @@ void gameTwoPlayers(int score[2], char previousPlayer1Name[15], char previousPla
 
         endgame = 1;
       }
+      viewBoard(board);
     }
   }
 
