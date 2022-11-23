@@ -1,12 +1,15 @@
 void gameTwoPlayers(int score[2], char previousPlayer1Name[15], char previousPlayer2Name[15])
 {
-  char player1name[15] = previousPlayer1Name;
-  char player2name[15] = previousPlayer2Name;
+  char player1name[15];
+  char player2name[15];
   char board[3][3];
   int winner = 0;
   int position[2];
   int endgame = 0;
   int playerTurn = 1;
+
+  strcpy(player1name, previousPlayer1Name);
+  strcpy(player2name, previousPlayer2Name);
 
   initBoard(board);
 

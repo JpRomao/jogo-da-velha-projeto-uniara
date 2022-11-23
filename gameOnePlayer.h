@@ -1,12 +1,14 @@
 void gameOnePlayer(int score[2], char previousPlayerName[15])
 {
-  char playername[15] = previousPlayerName;
+  char playername[15];
   char board[3][3];
   int endgame = 0;
   int position[2];
   int playerTurn = 1;
   int aiLevel = 2;
   int winner = 0;
+
+  strcpy(playername, previousPlayerName);
 
   initBoard(board);
 
@@ -78,7 +80,7 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
     }
   }
 
-  printf("Do you want to play again? (Y/N): ");
+  printf("\nDo you want to play again? (Y/N): ");
   fflush(stdin);
   char option = getchar();
   getchar();
