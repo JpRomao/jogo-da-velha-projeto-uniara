@@ -37,7 +37,7 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
     scanf("%d", &position[1]);
     getchar();
 
-    if (play(board, position, 1))
+    if (play(board, position, playerTurn))
     {
       winner = checkWinner(board, playerTurn, playerName, "Computer");
 
@@ -64,29 +64,32 @@ void gameOnePlayer(int score[2], char previousPlayerName[15])
       continue;
     }
 
-    if (checkWinner(board, 1, playerName, "Computer"))
+    if (checkWinner(board, playerTurn, playerName, "Computer"))
     {
-      printf("Congratulations %s, you won!\n", playerName);
+      if (playerTurn == 1)
+      {
+        printf("Congratulations %s, you won!\n", playerName);
 
-      score[0]++;
+        score[0]++;
 
-      showScoreboard(score, playerName, "Computer");
+        showScoreboard(score, playerName, "Computer");
+      }
+      else
+      {
+        printf("You lose!\n");
 
-      endgame = 1;
-    }
-    else if (checkWinner(board, 2, playerName, "Computer"))
-    {
-      printf("You lose!\n");
+        score[1]++;
 
-      score[1]++;
-
-      showScoreboard(score, playerName, "Computer");
+        showScoreboard(score, playerName, "Computer");
+      }
 
       endgame = 1;
     }
     else if (isTie(board))
     {
       printf("\nIt's a draw!\n");
+
+      showScoreboard(score, playerName, "Computer");
 
       endgame = 1;
     }

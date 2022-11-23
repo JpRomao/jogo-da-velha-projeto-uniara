@@ -84,6 +84,19 @@ void tieBoard(char board[3][3])
   // return board;
 }
 
+void oWin(char board[3][3])
+{
+  board[0][0] = 'O';
+  board[0][1] = 'O';
+  board[0][2] = 'O';
+  board[1][0] = 'X';
+  board[1][1] = 'X';
+  board[1][2] = 'O';
+  board[2][0] = 'X';
+  board[2][1] = 'O';
+  board[2][2] = 'X';
+}
+
 // GAME MOCKS
 void passTurn(int playerTurn)
 {
